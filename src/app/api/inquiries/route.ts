@@ -16,8 +16,8 @@ export async function GET() {
       return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
     }
 
-    const customInquiries = getCustomInquiries();
-    const repairBookings = getRepairBookings();
+    const customInquiries = await getCustomInquiries();
+    const repairBookings = await getRepairBookings();
 
     return NextResponse.json({
       success: true,
@@ -40,7 +40,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ success: false, error: 'Please fill in all required fields' }, { status: 400 });
       }
 
-      const inquiry = createCustomInquiry({
+      const inquiry = await createCustomInquiry({
         customerName,
         phone,
         whatsapp: whatsapp || phone,
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ success: false, error: 'Please fill in all required fields' }, { status: 400 });
       }
 
-      const booking = createRepairBooking({
+      const booking = await createRepairBooking({
         customerName,
         phone,
         whatsapp: whatsapp || phone,
@@ -91,10 +91,10 @@ export async function PATCH(req: Request) {
     const { type, id, status } = body;
 
     if (type === 'custom_design') {
-      const success = updateCustomInquiryStatus(id, status);
+      const success = await updateCustomInquiryStatus(id, status);
       return NextResponse.json({ success });
     } else if (type === 'repair_booking') {
-      const success = updateRepairBookingStatus(id, status);
+      const success = await updateRepairBookingStatus(id, status);
       return NextResponse.json({ success });
     }
 

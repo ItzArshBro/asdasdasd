@@ -18,8 +18,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
-  const products = getProducts();
-  const rates = getDailyRates();
+  const products = await getProducts();
+  const rates = await getDailyRates();
 
   return (
     <div className="space-y-24 sm:space-y-36 pb-24 bg-[#F7F4EF]">

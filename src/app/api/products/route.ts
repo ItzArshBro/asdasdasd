@@ -9,7 +9,7 @@ export async function GET(req: Request) {
     const search = searchParams.get('search');
     const featured = searchParams.get('featured');
 
-    let products = getProducts();
+    let products = await getProducts();
 
     if (category && category !== 'All') {
       products = products.filter((p) => p.category.toLowerCase() === category.toLowerCase());
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Missing required product fields' }, { status: 400 });
     }
 
-    const newProduct = createProduct({
+    const newProduct = await createProduct({
       name,
       nepaliName: nepaliName || '',
       sku: sku.toUpperCase(),

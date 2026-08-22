@@ -5,7 +5,7 @@ import { getAdminSession } from '@/lib/auth';
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const product = getProductById(id);
+    const product = await getProductById(id);
     if (!product) {
       return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
     }
@@ -29,7 +29,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
       updates.weightTola = Number((Number(updates.weightGrams) / 11.6638).toFixed(2));
     }
 
-    const updated = updateProduct(id, updates);
+    const updated = await updateProduct(id, updates);
     if (!updated) {
       return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
     }
@@ -48,7 +48,7 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     }
 
     const { id } = await params;
-    const deleted = deleteProduct(id);
+    const deleted = await deleteProduct(id);
     if (!deleted) {
       return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
     }

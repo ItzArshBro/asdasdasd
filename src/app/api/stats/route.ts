@@ -3,10 +3,10 @@ import { getWebStats, incrementStat, getProducts, getCustomInquiries, getRepairB
 
 export async function GET() {
   try {
-    const stats = getWebStats();
-    const products = getProducts();
-    const customInquiries = getCustomInquiries();
-    const repairBookings = getRepairBookings();
+    const stats = await getWebStats();
+    const products = await getProducts();
+    const customInquiries = await getCustomInquiries();
+    const repairBookings = await getRepairBookings();
 
     return NextResponse.json({
       success: true,
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { event } = body;
     if (['totalProductViews', 'totalWhatsAppClicks', 'totalCartInquiries'].includes(event)) {
-      const updated = incrementStat(event);
+      const updated = await incrementStat(event);
       return NextResponse.json({ success: true, stats: updated });
     }
     return NextResponse.json({ success: false, error: 'Invalid event' }, { status: 400 });

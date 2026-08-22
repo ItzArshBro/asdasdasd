@@ -4,7 +4,7 @@ import { getAdminSession } from '@/lib/auth';
 
 export async function GET() {
   try {
-    const rates = getDailyRates();
+    const rates = await getDailyRates();
     return NextResponse.json({ success: true, rates });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to fetch rates' }, { status: 500 });
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Invalid rate numbers' }, { status: 400 });
     }
 
-    const updated = updateDailyRates({
+    const updated = await updateDailyRates({
       gold24kPerTola: Number(gold24kPerTola),
       gold22kPerTola: Number(gold22kPerTola),
       gold18kPerGram: Number(gold18kPerGram) || (Number(gold24kPerTola) / 11.6638) * 0.75,

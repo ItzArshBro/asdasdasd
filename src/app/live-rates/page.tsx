@@ -6,7 +6,7 @@ import { TrendingUp, ShieldCheck, Scale, Info } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export default async function LiveRatesPage() {
-  const rates = getDailyRates();
+  const rates = await getDailyRates();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 bg-transparent">
