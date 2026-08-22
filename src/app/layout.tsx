@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${cinzel.variable}`}>
-      <body className="min-h-screen bg-[#F7F4EF] text-[#1A1A1A] flex flex-col antialiased">
+      <body className="min-h-screen bg-[#F5F2ED] text-[#2C2C2C] flex flex-col antialiased">
         <CartProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

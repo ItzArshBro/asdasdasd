@@ -2,15 +2,15 @@
 
 @layer base {
   :root {
-    --background: #F7F4EF;
-    --foreground: #1A1A1A;
-    --primary: #1B4332;
-    --accent: #C08552;
+    --background: #F5F2ED;
+    --foreground: #2C2C2C;
+    --primary: #2C2C2C;
+    --accent: #8A7968;
   }
 
   body {
-    background-color: #F7F4EF !important;
-    color: #1A1A1A;
+    background-color: #F5F2ED !important;
+    color: #2C2C2C;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow-x: hidden;
   }
@@ -23,17 +23,17 @@
 
 /* Warm Accent Gradient instead of standard bright gold */
 .bg-gold-gradient {
-  background: #C08552;
-  background: linear-gradient(135deg, #C08552 0%, #d4a373 50%, #C08552 100%);
+  background: #8A7968;
+  background: linear-gradient(135deg, #8A7968 0%, #a29180 50%, #8A7968 100%);
 }
 
 .bg-gold-gradient-soft {
-  background: linear-gradient(135deg, rgba(192, 133, 82, 0.08) 0%, rgba(212, 163, 115, 0.15) 50%, rgba(192, 133, 82, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(138, 121, 104, 0.08) 0%, rgba(162, 145, 128, 0.15) 50%, rgba(138, 121, 104, 0.08) 100%);
 }
 
 /* Rich Metallic Accent text style */
 .text-gold-metallic {
-  background: linear-gradient(135deg, #1B4332 0%, #C08552 60%, #1B4332 100%);
+  background: linear-gradient(135deg, #2C2C2C 0%, #8A7968 60%, #2C2C2C 100%);
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -41,32 +41,32 @@
 }
 
 .border-gold-gradient {
-  border-image: linear-gradient(90deg, rgba(192, 133, 82, 1) 0%, rgba(212, 163, 115, 1) 46%, rgba(192, 133, 82, 1) 100%) 1;
+  border-image: linear-gradient(90deg, rgba(138, 121, 104, 1) 0%, rgba(162, 145, 128, 1) 46%, rgba(138, 121, 104, 1) 100%) 1;
 }
 
 .gold-shadow {
-  box-shadow: 0 10px 25px -5px rgba(192, 133, 82, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(138, 121, 104, 0.2);
 }
 
 .card-luxury {
   background: #ffffff;
-  border: 1px solid rgba(192, 133, 82, 0.2);
+  border: 1px solid rgba(138, 121, 104, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-luxury:hover {
-  border-color: #C08552;
+  border-color: #8A7968;
   transform: translateY(-4px);
-  box-shadow: 0 16px 30px -8px rgba(192, 133, 82, 0.15);
+  box-shadow: 0 16px 30px -8px rgba(138, 121, 104, 0.15);
 }
 
 /* Glassmorphism Floating Navbar using new Primary/Accent warm color specs */
 .glassmorphism-nav {
-  background: rgba(247, 244, 239, 0.92);
+  background: rgba(245, 242, 237, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(192, 133, 82, 0.25);
-  box-shadow: 0 10px 30px -10px rgba(27, 67, 50, 0.08), 0 4px 12px -2px rgba(192, 133, 82, 0.1);
+  border: 1px solid rgba(138, 121, 104, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(44, 44, 44, 0.08), 0 4px 12px -2px rgba(138, 121, 104, 0.1);
 }
 
 /* Clean Custom scrollbar */
@@ -76,14 +76,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F7F4EF;
+  background: #F5F2ED;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C08552;
+  background: #8A7968;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a97040;
+  background: #736353;
 }
