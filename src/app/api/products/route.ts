@@ -100,7 +100,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true, product: newProduct });
-  } catch (error) {
-    return NextResponse.json({ success: false, error: 'Failed to create product' }, { status: 500 });
+  } catch (error: any) {
+    console.error('Failed to create product error details:', error);
+    return NextResponse.json({ success: false, error: error.message || error || 'Failed to create product' }, { status: 500 });
   }
 }
