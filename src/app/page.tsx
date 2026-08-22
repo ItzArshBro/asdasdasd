@@ -94,7 +94,7 @@ export default async function HomePage() {
                   <div className="text-base sm:text-lg font-extrabold text-amber-900 font-serif-luxury">Live Rates</div>
                   <div className="text-[11px] text-slate-600 font-bold">Daily Bullion Sync</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-amber-50/60 border border-amber-200">
+                <div className="p-3 rounded-2xl bg-white border border-amber-200">
                   <div className="text-base sm:text-lg font-extrabold text-amber-900 font-serif-luxury">Artisan Made</div>
                   <div className="text-[11px] text-slate-600 font-bold">Devdaha Workshop</div>
                 </div>
@@ -103,7 +103,7 @@ export default async function HomePage() {
 
             {/* Right Hero Info Card */}
             <div className="lg:col-span-5">
-              <div className="p-8 rounded-3xl bg-amber-50/60 border-2 border-amber-300 shadow-md space-y-5">
+              <div className="p-8 rounded-3xl bg-white border-2 border-amber-300 shadow-md space-y-5">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-gold-gradient text-slate-950 flex items-center justify-center font-bold shadow-2xs">
                     <Sparkles className="w-6 h-6" />
@@ -150,7 +150,7 @@ export default async function HomePage() {
       {/* Live Metal Price Calculator Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">
             <Calculator className="w-3.5 h-3.5 text-amber-700" />
             <span>Interactive Tool</span>
           </div>
@@ -189,7 +189,7 @@ export default async function HomePage() {
 
         {/* Products Grid or Real Empty State */}
         {products.length === 0 ? (
-          <div className="p-10 rounded-3xl bg-amber-50/40 border-2 border-amber-200 text-center space-y-4 max-w-xl mx-auto">
+          <div className="p-10 rounded-3xl bg-white border-2 border-amber-200 text-center space-y-4 max-w-xl mx-auto shadow-2xs">
             <Gem className="w-10 h-10 text-amber-700 mx-auto" />
             <h3 className="text-lg font-bold font-serif-luxury text-slate-900">
               Fresh Showroom Arrivals Coming Soon
@@ -219,7 +219,7 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Card 1: Order Custom Design */}
-          <div className="rounded-3xl p-8 bg-amber-50/50 border-2 border-amber-300 shadow-md flex flex-col justify-between space-y-6">
+          <div className="rounded-3xl p-8 bg-white border-2 border-amber-300 shadow-md flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-full border border-amber-300/80 bg-white flex items-center justify-center text-amber-800 shadow-3xs">
                 <Gem className="w-5 h-5" />
@@ -264,7 +264,7 @@ export default async function HomePage() {
           </div>
 
           {/* Card 2: Book Repair / Polish */}
-          <div className="rounded-3xl p-8 bg-amber-50/50 border-2 border-amber-300 shadow-md flex flex-col justify-between space-y-6">
+          <div className="rounded-3xl p-8 bg-white border-2 border-amber-300 shadow-md flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-full border border-amber-300/80 bg-white flex items-center justify-center text-amber-800 shadow-3xs">
                 <Hammer className="w-5 h-5" />

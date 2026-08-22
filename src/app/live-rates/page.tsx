@@ -11,7 +11,7 @@ export default async function LiveRatesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 bg-white">
       {/* Page Header - Pure White & Gold Theme */}
-      <div className="rounded-3xl bg-amber-50/60 text-slate-900 p-8 sm:p-10 relative overflow-hidden border-2 border-amber-300 shadow-sm">
+      <div className="rounded-3xl bg-white text-slate-900 p-8 sm:p-10 relative overflow-hidden border-2 border-amber-300 shadow-sm">
         <div className="relative z-10 max-w-3xl space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-xs font-bold shadow-2xs">
             <TrendingUp className="w-3.5 h-3.5 text-amber-700" />
@@ -134,7 +134,7 @@ export default async function LiveRatesPage() {
 
       {/* Guide & Education Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 rounded-3xl bg-amber-50/50 border-2 border-amber-200 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border-2 border-amber-200 space-y-3 shadow-2xs">
           <Scale className="w-6 h-6 text-amber-700" />
           <h4 className="text-base font-bold text-slate-900 font-serif-luxury">
             Understanding Nepali Units
@@ -147,7 +147,7 @@ export default async function LiveRatesPage() {
           </ul>
         </div>
 
-        <div className="p-6 rounded-3xl bg-amber-50/50 border-2 border-amber-200 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border-2 border-amber-200 space-y-3 shadow-2xs">
           <ShieldCheck className="w-6 h-6 text-amber-700" />
           <h4 className="text-base font-bold text-slate-900 font-serif-luxury">
             Hallmark Purity Guide
@@ -157,7 +157,7 @@ export default async function LiveRatesPage() {
           </p>
         </div>
 
-        <div className="p-6 rounded-3xl bg-amber-50/50 border-2 border-amber-200 space-y-3">
+        <div className="p-6 rounded-3xl bg-white border-2 border-amber-200 space-y-3 shadow-2xs">
           <Info className="w-6 h-6 text-amber-700" />
           <h4 className="text-base font-bold text-slate-900 font-serif-luxury">
             Making Charges (ज्याला)

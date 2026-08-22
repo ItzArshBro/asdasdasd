@@ -94,8 +94,9 @@ export default function CartPage() {
         )}
       </div>
 
+      {/* Empty State Card */}
       {items.length === 0 ? (
-        <div className="py-20 text-center bg-amber-50/40 rounded-3xl border-2 border-amber-200 p-8 space-y-6 max-w-2xl mx-auto">
+        <div className="py-20 text-center bg-white rounded-3xl border-2 border-amber-200 p-8 space-y-6 max-w-2xl mx-auto shadow-2xs">
           <div className="w-20 h-20 rounded-full bg-white border-2 border-amber-300 text-amber-800 flex items-center justify-center mx-auto shadow-sm">
             <ShoppingBag className="w-10 h-10" />
           </div>
@@ -120,7 +121,7 @@ export default function CartPage() {
           {/* Left Column: Cart Items List */}
           <div className="lg:col-span-7 space-y-4">
             {/* Info Banner */}
-            <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-slate-800 flex items-start gap-3">
+            <div className="p-4 rounded-2xl bg-white border border-amber-200 text-xs text-slate-800 flex items-start gap-3 shadow-3xs">
               <Sparkles className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold">WhatsApp Direct Inquiry Checkout:</span>
@@ -222,7 +223,7 @@ export default function CartPage() {
 
           {/* Right Column: Checkout Summary - Pure White with Gold */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-amber-50/50 text-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-amber-300 shadow-md space-y-6">
+            <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-amber-300 shadow-md space-y-6">
               <div className="border-b border-amber-200 pb-4 flex items-center justify-between">
                 <h3 className="text-lg font-bold font-serif-luxury text-slate-950">
                   Inquiry Order Summary

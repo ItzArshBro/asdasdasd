@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 bg-white">
       {/* Header Banner - Pure White & Gold Theme */}
-      <div className="rounded-3xl bg-amber-50/60 text-slate-900 p-8 sm:p-10 relative overflow-hidden border-2 border-amber-300 shadow-sm">
+      <div className="rounded-3xl bg-white text-slate-900 p-8 sm:p-10 relative overflow-hidden border-2 border-amber-300 shadow-sm">
         <div className="relative z-10 max-w-3xl space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-xs font-bold shadow-2xs">
             <MapPin className="w-3.5 h-3.5 text-amber-700" />
@@ -38,7 +38,7 @@ export default function ContactPage() {
 
             <div className="space-y-4 text-sm text-slate-800">
               {/* Showroom Address */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-amber-50/60 border border-amber-200">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-amber-200 shadow-3xs">
                 <div className="w-10 h-10 rounded-2xl bg-gold-gradient text-slate-950 flex items-center justify-center shrink-0 shadow-2xs">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
               </div>
 
               {/* Phone & WhatsApp */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-amber-50/60 border border-amber-200">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-amber-200 shadow-3xs">
                 <div className="w-10 h-10 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
                   <MessageCircle className="w-5 h-5" />
                 </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
               </div>
 
               {/* Opening Hours */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-amber-50/60 border border-amber-200">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-amber-200 shadow-3xs">
                 <div className="w-10 h-10 rounded-2xl bg-gold-gradient text-slate-950 flex items-center justify-center shrink-0 shadow-2xs">
                   <Clock className="w-5 h-5" />
                 </div>

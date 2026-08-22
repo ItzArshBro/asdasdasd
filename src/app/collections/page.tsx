@@ -98,7 +98,7 @@ export default function CollectionsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 bg-white">
       {/* Header Banner - White & Gold Theme */}
-      <div className="rounded-3xl bg-amber-50/60 text-slate-900 p-8 sm:p-10 relative overflow-hidden border-2 border-amber-300 shadow-sm">
+      <div className="rounded-3xl bg-white text-slate-900 p-8 sm:p-10 relative overflow-hidden border-2 border-amber-300 shadow-sm">
         <div className="relative z-10 max-w-2xl space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-xs font-bold shadow-2xs">
             <Gem className="w-3.5 h-3.5 text-amber-700" />
@@ -196,7 +196,7 @@ export default function CollectionsPage() {
           <p className="text-xs font-semibold text-slate-500">Loading RAMBADEVI Jewellers catalog...</p>
         </div>
       ) : sortedProducts.length === 0 ? (
-        <div className="py-16 text-center bg-amber-50/40 rounded-3xl border-2 border-amber-200 p-8 space-y-4">
+        <div className="py-16 text-center bg-white rounded-3xl border-2 border-amber-200 p-8 space-y-4 shadow-2xs">
           <Gem className="w-12 h-12 text-amber-700 mx-auto" />
           <div>
             <h3 className="text-base font-bold text-slate-900 font-serif-luxury">

@@ -199,7 +199,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Live Price Estimation Box - Pure White & Gold */}
-          <div className="p-6 rounded-3xl bg-amber-50/50 text-slate-900 border-2 border-amber-300 shadow-sm space-y-4">
+          <div className="p-6 rounded-3xl bg-white text-slate-900 border-2 border-amber-300 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-[11px] text-amber-900 font-extrabold uppercase tracking-widest">
@@ -328,7 +328,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Hallmark Guarantee */}
-          <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs text-slate-800 space-y-2">
+          <div className="p-4 rounded-2xl bg-white border border-amber-200 text-xs text-slate-800 space-y-2 shadow-3xs">
             <div className="flex items-center gap-2 font-bold text-slate-900">
               <ShieldCheck className="w-4 h-4 text-amber-700" />
               <span>100% Genuine Devdaha Hallmark Quality</span>
