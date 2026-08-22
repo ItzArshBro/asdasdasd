@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { DailyRates } from '@/lib/types';
-import { DEFAULT_RATES } from '@/lib/constants';
+import { DEFAULT_RATES, STORE_INFO } from '@/lib/constants';
 import { TrendingUp, Sparkles } from 'lucide-react';
 
 export default function LiveRatesTicker() {
@@ -68,12 +68,12 @@ export default function LiveRatesTicker() {
           </span>
           <span className="text-slate-300">•</span>
           <Link
-            href="https://wa.me/9779857073727"
+            href={`https://wa.me/977${STORE_INFO.whatsapp}`}
             target="_blank"
             className="hover:text-amber-800 transition-colors flex items-center gap-1 font-semibold"
           >
             <span>WhatsApp:</span>
-            <span className="font-extrabold text-amber-800">9857073727</span>
+            <span className="font-extrabold text-amber-800">{STORE_INFO.whatsapp}</span>
           </Link>
           <Link
             href="/live-rates"

@@ -8,7 +8,7 @@ export const STORE_INFO: StoreInfo = {
   district: 'Rupandehi',
   country: 'Nepal',
   phone: '9857073727',
-  whatsapp: '9857073727', // International format +9779857073727
+  whatsapp: '9713805456', // International format +9779713805456
   email: 'rambadevijewellers@gmail.com',
   workingHours: '9:30 AM - 7:30 PM',
   openDays: 'Sunday - Friday (Saturday Open on festive seasons)',

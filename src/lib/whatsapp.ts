@@ -2,7 +2,7 @@ import { STORE_INFO } from './constants';
 import { Product, InquiryCartItem, DailyRates } from './types';
 import { calculateProductPrice, formatNPR, formatWeight } from './rates';
 
-const WA_NUMBER = '9779857073727'; // International Nepal format for WhatsApp (9857073727)
+const WA_NUMBER = `977${STORE_INFO.whatsapp}`;
 
 export function getWhatsAppBaseUrl(message: string): string {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
