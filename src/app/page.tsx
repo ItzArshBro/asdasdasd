@@ -28,16 +28,12 @@ export default async function HomePage() {
     <div className="space-y-16 sm:space-y-24 pb-16 bg-white">
       {/* Hero Section */}
       <section className="relative bg-white text-slate-900 overflow-hidden pt-6 pb-12 sm:pb-16 border-b border-amber-200/80">
-        {/* Soft Ambient Glows */}
-        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-amber-200/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold shadow-2xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-xs font-bold shadow-2xs">
                 <Sparkles className="w-3.5 h-3.5 text-amber-700" />
                 <span>Devdaha-5, Khaireni • Hallmark 24K &amp; 22K Jewellery</span>
               </div>
@@ -68,7 +64,7 @@ export default async function HomePage() {
 
                 <Link
                   href="/custom-design"
-                  className="py-3.5 px-6 rounded-full bg-amber-50/80 border-2 border-amber-300 text-amber-950 hover:bg-amber-100 font-extrabold text-xs sm:text-sm transition-all shadow-2xs flex items-center gap-2"
+                  className="py-3.5 px-6 rounded-full bg-white border-2 border-amber-300 text-amber-950 hover:bg-amber-50 font-extrabold text-xs sm:text-sm transition-all shadow-2xs flex items-center gap-2"
                 >
                   <Sparkles className="w-4 h-4 text-amber-700" />
                   <span>Order Custom Design</span>
@@ -86,15 +82,15 @@ export default async function HomePage() {
 
               {/* Trust Indicators */}
               <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4 border-t border-amber-200 text-left">
-                <div className="p-3 rounded-2xl bg-amber-50/60 border border-amber-200">
+                <div className="p-3 rounded-2xl bg-white border border-amber-300 shadow-3xs">
                   <div className="text-base sm:text-lg font-extrabold text-amber-900 font-serif-luxury">100%</div>
                   <div className="text-[11px] text-slate-600 font-bold">Hallmarked 24K/22K</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-amber-50/60 border border-amber-200">
+                <div className="p-3 rounded-2xl bg-white border border-amber-300 shadow-3xs">
                   <div className="text-base sm:text-lg font-extrabold text-amber-900 font-serif-luxury">Live Rates</div>
                   <div className="text-[11px] text-slate-600 font-bold">Daily Bullion Sync</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white border border-amber-200">
+                <div className="p-3 rounded-2xl bg-white border border-amber-300 shadow-3xs">
                   <div className="text-base sm:text-lg font-extrabold text-amber-900 font-serif-luxury">Artisan Made</div>
                   <div className="text-[11px] text-slate-600 font-bold">Devdaha Workshop</div>
                 </div>
@@ -105,8 +101,8 @@ export default async function HomePage() {
             <div className="lg:col-span-5">
               <div className="p-8 rounded-3xl bg-white border-2 border-amber-300 shadow-md space-y-5">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-gold-gradient text-slate-950 flex items-center justify-center font-bold shadow-2xs">
-                    <Sparkles className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-full border border-amber-300 bg-white flex items-center justify-center text-amber-800 shadow-3xs">
+                    <Gem className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold font-serif-luxury text-slate-950">
