@@ -6,7 +6,7 @@ import { Product, DailyRates } from '@/lib/types';
 import { calculateProductPrice, formatNPR, formatWeight } from '@/lib/rates';
 import { generateSingleProductInquiry } from '@/lib/whatsapp';
 import { useCart } from '@/context/CartContext';
-import { ShoppingBag, MessageCircle, Eye, Sparkles, Check, Scale } from 'lucide-react';
+import { ShoppingBag, MessageCircle, Eye, Check } from 'lucide-react';
 
 interface Props {
   product: Product;
@@ -49,9 +49,9 @@ export default function ProductCard({ product, rates }: Props) {
   };
 
   return (
-    <div className="card-luxury rounded-3xl overflow-hidden flex flex-col group relative bg-white shadow-2xs">
+    <div className="rounded-xl overflow-hidden flex flex-col group relative bg-white shadow-xs border border-slate-100 hover:shadow-md transition-shadow">
       {/* Product Image Container */}
-      <Link href={`/collections/${product.id}`} className="relative block aspect-4/3 overflow-hidden bg-slate-50 border-b border-amber-100">
+      <Link href={`/collections/${product.id}`} className="relative block aspect-4/3 overflow-hidden bg-slate-50 border-b border-slate-100">
         <img
           src={
             imgError || !product.images?.[0]
@@ -60,33 +60,33 @@ export default function ProductCard({ product, rates }: Props) {
           }
           alt={product.name}
           onError={() => setImgError(true)}
-          className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
+          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
 
-        {/* Purity Badge */}
+        {/* Purity & Status Badges - Sharp corners, no outlines */}
         <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
-          <span className="px-2.5 py-1 rounded-lg text-[11px] font-extrabold uppercase bg-white/95 backdrop-blur-xs text-slate-900 border border-amber-300 shadow-2xs">
+          <span className="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase bg-white/95 text-slate-800 shadow-3xs">
             {product.karat}
           </span>
           {product.isTrending && (
-            <span className="px-2 py-0.5 rounded-lg text-[10px] font-bold uppercase bg-gold-gradient text-slate-950 shadow-2xs flex items-center gap-1">
-              <Sparkles className="w-2.5 h-2.5" /> Popular
+            <span className="px-2 py-0.5 rounded-md text-[9px] font-bold uppercase bg-slate-900 text-white shadow-3xs">
+              Popular
             </span>
           )}
         </div>
 
         {/* Weight Tag */}
         <div className="absolute bottom-3 left-3 z-10">
-          <span className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/95 backdrop-blur-xs text-amber-900 border border-amber-300 shadow-2xs inline-flex items-center gap-1">
-            <Scale className="w-3 h-3 text-amber-700" />
-            <span>{formatWeight(product.weightGrams)}</span>
+          <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/95 text-amber-900 shadow-3xs">
+            {formatWeight(product.weightGrams)}
           </span>
         </div>
 
         {/* Quick View Floating Overlay Button */}
-        <div className="absolute inset-0 bg-amber-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-          <span className="px-4 py-2 rounded-full bg-white text-slate-900 text-xs font-bold shadow-md flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform border border-amber-200">
-            <Eye className="w-3.5 h-3.5 text-amber-700" /> View Details
+        <div className="absolute inset-0 bg-slate-950/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+          <span className="px-3.5 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-bold shadow-md flex items-center gap-1 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <Eye className="w-3.5 h-3.5" />
+            <span>View Details</span>
           </span>
         </div>
       </Link>
@@ -94,9 +94,9 @@ export default function ProductCard({ product, rates }: Props) {
       {/* Content Body */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
         <div>
-          <div className="flex items-center justify-between text-[11px] text-slate-500 mb-1">
-            <span className="font-bold uppercase tracking-wider text-amber-800">{product.category}</span>
-            <span className="font-mono text-slate-400">{product.sku}</span>
+          <div className="flex items-center justify-between text-[10px] text-slate-400 mb-1 font-bold uppercase tracking-wider">
+            <span>{product.category}</span>
+            <span className="font-mono text-slate-300">{product.sku}</span>
           </div>
 
           <Link href={`/collections/${product.id}`}>
@@ -112,9 +112,9 @@ export default function ProductCard({ product, rates }: Props) {
           )}
 
           {/* Live Price Estimation */}
-          <div className="mt-3 pt-3 border-t border-amber-100">
-            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
-              Est. Live Price (Today)
+          <div className="mt-3 pt-3 border-t border-slate-100">
+            <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+              Est. Live Price
             </div>
             <div className="text-lg font-extrabold text-slate-950 font-serif-luxury mt-0.5">
               {formatNPR(priceInfo.totalPrice)}
@@ -128,20 +128,20 @@ export default function ProductCard({ product, rates }: Props) {
           <button
             type="button"
             onClick={handleAddToCart}
-            className={`py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-2xs border ${
+            className={`py-2.5 px-3 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
               isAdded
-                ? 'bg-emerald-600 text-white border-emerald-600'
-                : 'bg-slate-50 text-slate-900 border-slate-200 hover:bg-amber-50 hover:border-amber-300'
+                ? 'bg-emerald-600 text-white'
+                : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
             }`}
           >
             {isAdded ? (
               <>
                 <Check className="w-3.5 h-3.5 text-white" />
-                <span>Added!</span>
+                <span>Added</span>
               </>
             ) : (
               <>
-                <ShoppingBag className="w-3.5 h-3.5 text-amber-700" />
+                <ShoppingBag className="w-3.5 h-3.5" />
                 <span>Add to Cart</span>
               </>
             )}
@@ -151,9 +151,9 @@ export default function ProductCard({ product, rates }: Props) {
           <button
             type="button"
             onClick={handleWhatsAppInquiry}
-            className="py-2.5 px-3 rounded-xl text-xs font-extrabold bg-gold-gradient text-slate-950 hover:brightness-105 transition-all flex items-center justify-center gap-1.5 shadow-2xs active:scale-98"
+            className="py-2.5 px-3 rounded-lg text-xs font-extrabold bg-gold-gradient text-slate-950 hover:brightness-105 transition-all flex items-center justify-center gap-1.5 active:scale-98"
           >
-            <MessageCircle className="w-3.5 h-3.5 text-slate-950 fill-slate-950" />
+            <MessageCircle className="w-3.5 h-3.5 text-slate-950 fill-slate-950 shrink-0" />
             <span>WhatsApp</span>
           </button>
         </div>
