@@ -63,14 +63,27 @@ export async function POST(req: Request) {
       isTrending,
     } = body;
 
-    if (!name || !sku || !category || !metalType || !weightGrams) {
+    if (!name || !category || !metalType || !weightGrams) {
       return NextResponse.json({ success: false, error: 'Missing required product fields' }, { status: 400 });
     }
+
+    const categoryPrefixMap: Record<string, string> = {
+      'Bridal Sets': 'BS',
+      'Rani Haar & Necklaces': 'NH',
+      'Bangles & Kadas': 'BK',
+      'Earrings & Jhumkas': 'EJ',
+      'Rings': 'RG',
+      'Mangalsutra & Tilhari': 'MT',
+      "Men's Collection": 'MC',
+      'Silver & Coins': 'SC',
+    };
+    const prefix = categoryPrefixMap[category] || 'JW';
+    const finalSku = sku ? sku.toUpperCase() : `RJ-${prefix}-${Math.floor(100000 + Math.random() * 900000)}`;
 
     const newProduct = await createProduct({
       name,
       nepaliName: nepaliName || '',
-      sku: sku.toUpperCase(),
+      sku: finalSku,
       category,
       metalType,
       karat: karat || '24K',
