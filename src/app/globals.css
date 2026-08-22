@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --gold-primary: #FFD700;
+    --gold-light: #FFED85;
+    --gold-dark: #B8860B;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: 'Cinzel', 'Playfair Display', 'Georgia', serif;
+    letter-spacing: -0.01em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* RAMBADEVI Exact Golden Theme Gradients (User Specified) */
+.bg-gold-gradient {
+  background: #FFD700;
+  background: linear-gradient(90deg, rgba(255, 215, 0, 1) 0%, rgba(255, 237, 133, 1) 46%, rgba(255, 215, 0, 1) 100%);
+}
+
+.bg-gold-gradient-soft {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 237, 133, 0.25) 50%, rgba(255, 215, 0, 0.12) 100%);
+}
+
+/* Rich Metallic Gold for Headlines on White Background with zero clip bug */
+.text-gold-metallic {
+  background: linear-gradient(135deg, #996515 0%, #D4AF37 45%, #8B6508 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block;
+}
+
+.border-gold-gradient {
+  border-image: linear-gradient(90deg, rgba(255, 215, 0, 1) 0%, rgba(255, 237, 133, 1) 46%, rgba(255, 215, 0, 1) 100%) 1;
+}
+
+.gold-shadow {
+  box-shadow: 0 10px 25px -5px rgba(255, 215, 0, 0.35);
+}
+
+.card-luxury {
+  background: #ffffff;
+  border: 1px solid #f3e8b5;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-luxury:hover {
+  border-color: #FFD700;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -8px rgba(255, 215, 0, 0.28);
+}
+
+/* Glassmorphism Floating Navbar */
+.glassmorphism-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(255, 215, 0, 0.15);
+}
+
+/* Clean Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
 }

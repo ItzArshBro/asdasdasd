@@ -1,0 +1,28 @@
+{
+  "products": [],
+  "rates": {
+    "gold24kPerTola": 172000,
+    "gold22kPerTola": 171200,
+    "gold18kPerGram": 11050,
+    "silverPerTola": 2050,
+    "silverPerGram": 175.75,
+    "updatedAt": "2026-08-22T03:30:00.000Z",
+    "source": "Federation of Nepal Gold & Silver Dealers (FENEGOSIDA) Official Daily Rates",
+    "notes": "Live market rates for Devdaha-5, Khaireni, Rupandehi."
+  },
+  "customInquiries": [],
+  "repairBookings": [],
+  "stats": {
+    "totalProductViews": 0,
+    "totalWhatsAppClicks": 0,
+    "totalCustomDesignInquiries": 0,
+    "totalRepairBookings": 0,
+    "totalCartInquiries": 0,
+    "lastUpdated": "2026-08-22T03:30:00.000Z"
+  },
+  "admin": {
+    "username": "rambadevi",
+    "passwordHash": "$2a$10$7Z8Kq4k0mN3/vW3C0bYk..sBw0uIq9E.F6vR4gP.Gq3T3N7rW/0Y2",
+    "lastLogin": "2026-08-22T03:42:22.788Z"
+  }
+}
