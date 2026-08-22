@@ -164,7 +164,7 @@ export default function CustomDesignPage() {
                 </div>
 
                 {errorMsg && (
-                  <div className="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-xs text-red-700 font-bold">
+                  <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 font-bold">
                     {errorMsg}
                   </div>
                 )}
@@ -181,7 +181,7 @@ export default function CustomDesignPage() {
                       placeholder="e.g. Maya Shrestha"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                     />
                   </div>
 
@@ -195,7 +195,7 @@ export default function CustomDesignPage() {
                       placeholder="e.g. 9847XXXXXX"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                     />
                   </div>
                 </div>
@@ -209,7 +209,7 @@ export default function CustomDesignPage() {
                     <select
                       value={metalType}
                       onChange={(e) => setMetalType(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
                     >
                       <option value="24K Fine Gold (छापावाल सुन)">24K Fine Gold (छापावाल सुन 99.5%)</option>
                       <option value="22K Tejabi Gold (तेजाबी सुन)">22K Tejabi Gold (तेजाबी सुन 91.6%)</option>
@@ -227,7 +227,7 @@ export default function CustomDesignPage() {
                     <select
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
                     >
                       <option value="Bridal Set / Rani Haar">Bridal Set / Rani Haar</option>
                       <option value="Traditional Naugedi / Tilhari">Traditional Naugedi / Tilhari</option>
@@ -251,7 +251,7 @@ export default function CustomDesignPage() {
                     <select
                       value={weightRange}
                       onChange={(e) => setWeightRange(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
                     >
                       <option value="Under 1 Tola (< 11.66g)">Under 1 Tola (&lt; 11.66g)</option>
                       <option value="1 - 2 Tola (~12g - 23g)">1 - 2 Tola (~12g - 23g)</option>
@@ -271,7 +271,7 @@ export default function CustomDesignPage() {
                       placeholder="e.g. NPR 2,50,000 - 3,00,000"
                       value={budgetNpr}
                       onChange={(e) => setBudgetNpr(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                     />
                   </div>
                 </div>
@@ -288,7 +288,7 @@ export default function CustomDesignPage() {
                       placeholder="Paste image link from Pinterest, Google Photos, or Unsplash..."
                       value={referenceImageUrl}
                       onChange={(e) => setReferenceImageUrl(e.target.value)}
-                      className="w-full text-xs sm:text-sm pl-11 pr-4 py-3 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                      className="w-full text-xs sm:text-sm pl-11 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                     />
                   </div>
                   <p className="text-[11px] text-slate-500 mt-1">
@@ -307,7 +307,7 @@ export default function CustomDesignPage() {
                     placeholder="Describe your design specifications (e.g. peacock filigree motifs, antique polish, ruby gemstone settings, exact ring size, urgent delivery date for wedding)..."
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="w-full text-xs sm:text-sm p-4 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                    className="w-full text-xs sm:text-sm p-4 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                   />
                 </div>
 
@@ -316,7 +316,7 @@ export default function CustomDesignPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 px-6 rounded-2xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="w-full py-4 px-6 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     {loading ? (
                       <div className="w-5 h-5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
@@ -347,7 +347,7 @@ export default function CustomDesignPage() {
         {/* Right Info Column - Pure White & Gold Cards */}
         <div className="lg:col-span-5 space-y-6">
           {/* Process Timeline */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-amber-300 shadow-md space-y-6">
+          <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-md space-y-6">
             <h3 className="text-xl font-bold font-serif-luxury text-slate-950">
               How Custom Orders Work
             </h3>

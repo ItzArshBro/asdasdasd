@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import {
@@ -16,6 +16,26 @@ import {
 export default function AdminDashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [authorized, setAuthorized] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await fetch('/api/auth');
+        const data = await res.json();
+        if (data.authenticated) {
+          setAuthorized(true);
+        } else {
+          setAuthorized(false);
+          router.push('/admin/login');
+        }
+      } catch (e) {
+        setAuthorized(false);
+        router.push('/admin/login');
+      }
+    };
+    checkAuth();
+  }, [router]);
 
   const handleLogout = async () => {
     try {
@@ -26,6 +46,10 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
       router.push('/admin/login');
     }
   };
+
+  if (authorized === null || authorized === false) {
+    return <div className="min-h-screen bg-black" />;
+  }
 
   const navItems = [
     { name: 'Overview', href: '/admin/dashboard', icon: LayoutDashboard },

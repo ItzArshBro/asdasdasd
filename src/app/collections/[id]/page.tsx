@@ -199,7 +199,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Live Price Estimation Box - Pure White & Gold */}
-          <div className="p-6 rounded-3xl bg-white text-slate-900 border-2 border-amber-300 shadow-sm space-y-4">
+          <div className="p-6 rounded-xl bg-white text-slate-900 border border-slate-200 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-[11px] text-amber-900 font-extrabold uppercase tracking-widest">
@@ -214,7 +214,7 @@ export default function ProductDetailPage() {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 pt-3 border-t border-amber-200 text-xs">
+            <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100 text-xs">
               <div>
                 <span className="text-slate-500">Net Metal Weight:</span>
                 <p className="font-bold text-slate-900 mt-0.5">{formatWeight(product.weightGrams * quantity)}</p>
@@ -225,7 +225,7 @@ export default function ProductDetailPage() {
               </div>
             </div>
 
-            <div className="text-[11px] text-slate-500 pt-2 border-t border-amber-200">
+            <div className="text-[11px] text-slate-500 pt-2 border-t border-slate-100">
               *Making charges ({product.makingChargePercentage}%) calculated based on today&apos;s bullion market rates.
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function ProductDetailPage() {
               <label className="text-xs font-bold uppercase tracking-wider text-slate-800">
                 Quantity:
               </label>
-              <div className="flex items-center border-2 border-slate-200 rounded-xl bg-white shadow-2xs">
+              <div className="flex items-center border border-slate-200 rounded-xl bg-white shadow-2xs">
                 <button
                   type="button"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -288,7 +288,7 @@ export default function ProductDetailPage() {
                 placeholder="Add custom notes (e.g. Ring size 14, specific chain length, rush order)..."
                 value={customNote}
                 onChange={(e) => setCustomNote(e.target.value)}
-                className="w-full text-xs px-3.5 py-2.5 rounded-xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
               />
             </div>
           </div>
@@ -298,7 +298,7 @@ export default function ProductDetailPage() {
             <button
               type="button"
               onClick={handleAddToCart}
-              className={`py-4 px-5 rounded-2xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-2xs border ${
+              className={`py-4 px-5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-2xs border ${
                 isAdded
                   ? 'bg-emerald-600 text-white border-emerald-600'
                   : 'bg-slate-100 text-slate-900 border-slate-300 hover:bg-amber-50 hover:border-amber-300'
@@ -320,7 +320,7 @@ export default function ProductDetailPage() {
             <button
               type="button"
               onClick={handleWhatsAppInquiry}
-              className="py-4 px-5 rounded-2xl text-xs sm:text-sm font-extrabold bg-gold-gradient text-slate-950 hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 active:scale-98"
+              className="py-4 px-5 rounded-xl text-xs sm:text-sm font-extrabold bg-gold-gradient text-slate-950 hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 active:scale-98"
             >
               <MessageCircle className="w-4 h-4 text-slate-950 fill-slate-950" />
               <span>Inquire on WhatsApp</span>
@@ -328,7 +328,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Hallmark Guarantee */}
-          <div className="p-4 rounded-2xl bg-white border border-amber-200 text-xs text-slate-800 space-y-2 shadow-3xs">
+          <div className="p-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 space-y-2 shadow-3xs">
             <div className="flex items-center gap-2 font-bold text-slate-900">
               <ShieldCheck className="w-4 h-4 text-amber-700" />
               <span>100% Genuine Devdaha Hallmark Quality</span>
@@ -342,11 +342,11 @@ export default function ProductDetailPage() {
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <div className="pt-12 border-t border-amber-200 space-y-6">
+        <div className="pt-12 border-t border-slate-100 space-y-6">
           <h3 className="text-xl sm:text-2xl font-bold text-slate-950 font-serif-luxury">
             You May Also Love
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 min-[375px]:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {relatedProducts.map((p) => (
               <ProductCard key={p.id} product={p} rates={rates} />
             ))}

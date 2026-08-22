@@ -114,7 +114,7 @@ export default function CollectionsPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-6 rounded-3xl border-2 border-amber-200 shadow-sm space-y-5">
+      <div className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200 shadow-sm space-y-5">
         {/* Search & Sort Controls */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Search Input */}
@@ -125,16 +125,16 @@ export default function CollectionsPage() {
               placeholder="Search by necklace, jhumka, ring, SKU (e.g. RJ-BR-001)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+              className="w-full text-xs sm:text-sm pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
             />
           </div>
 
           {/* Metal & Sort dropdowns */}
-          <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-between sm:justify-end">
             <select
               value={selectedMetal}
               onChange={(e) => setSelectedMetal(e.target.value)}
-              className="text-xs font-bold px-3 py-2.5 rounded-xl border-2 border-slate-200 bg-white text-slate-800 focus:outline-hidden focus:border-amber-400"
+              className="text-xs font-bold px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 focus:outline-hidden focus:border-amber-400 flex-1 sm:flex-none"
             >
               <option value="all">All Metal Purities</option>
               <option value="gold_24k">24K Fine Gold (छापावाल)</option>
@@ -146,7 +146,7 @@ export default function CollectionsPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="text-xs font-bold px-3 py-2.5 rounded-xl border-2 border-slate-200 bg-white text-slate-800 focus:outline-hidden focus:border-amber-400"
+              className="text-xs font-bold px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 focus:outline-hidden focus:border-amber-400 flex-1 sm:flex-none"
             >
               <option value="trending">Sort: Popular &amp; Trending</option>
               <option value="weight_asc">Weight: Low to High</option>
@@ -222,7 +222,7 @@ export default function CollectionsPage() {
             <span>Live daily prices updated</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 min-[375px]:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {sortedProducts.map((product) => (
               <ProductCard key={product.id} product={product} rates={rates} />
             ))}

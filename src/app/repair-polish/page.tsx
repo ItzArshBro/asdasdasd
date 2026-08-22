@@ -106,19 +106,19 @@ export default function RepairPolishPage() {
       </div>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 min-[375px]:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {REPAIR_SERVICES.map((srv) => (
           <div
             key={srv.id}
             onClick={() => setServiceType(srv.name)}
-            className={`p-6 rounded-3xl border-2 transition-all cursor-pointer ${
+            className={`p-5 rounded-xl border transition-all cursor-pointer ${
               serviceType === srv.name
-                ? 'border-amber-400 bg-amber-50 shadow-md ring-2 ring-amber-200'
+                ? 'border-amber-500 bg-amber-50 shadow-md ring-2 ring-amber-200'
                 : 'border-slate-200 bg-white hover:border-amber-300 hover:shadow-xs'
             }`}
           >
-            <div className="w-10 h-10 rounded-2xl bg-gold-gradient text-slate-950 flex items-center justify-center font-bold text-sm shadow-2xs mb-3">
-              <Sparkles className="w-5 h-5" />
+            <div className="w-9 h-9 rounded-xl bg-gold-gradient text-slate-950 flex items-center justify-center font-bold text-sm shadow-2xs mb-3">
+              <Sparkles className="w-4 h-4" />
             </div>
             <h3 className="text-base font-bold text-slate-900 font-serif-luxury">
               {srv.name}
@@ -138,7 +138,7 @@ export default function RepairPolishPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* Left Form Column */}
         <div className="lg:col-span-7">
-          <div className="bg-white rounded-3xl border-2 border-amber-300 p-6 sm:p-8 shadow-md">
+          <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 shadow-md">
             {submittedBooking ? (
               <div className="py-8 text-center space-y-6 animate-in zoom-in-95">
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
@@ -155,7 +155,7 @@ export default function RepairPolishPage() {
                 </div>
 
                 {/* Instant WhatsApp Send Button */}
-                <div className="p-6 rounded-2xl bg-amber-50 border border-amber-200 text-left space-y-3">
+                <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 text-left space-y-3">
                   <span className="text-xs font-bold text-amber-900 uppercase tracking-wide">
                     Confirm your appointment on WhatsApp:
                   </span>
@@ -164,7 +164,7 @@ export default function RepairPolishPage() {
                   </p>
                   <button
                     onClick={handleSendToWhatsApp}
-                    className="w-full py-4 px-4 rounded-2xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2"
+                    className="w-full py-4 px-4 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-5 h-5 fill-slate-950" />
                     <span>Confirm via WhatsApp (9857073727)</span>
@@ -187,7 +187,7 @@ export default function RepairPolishPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="border-b border-amber-200 pb-3">
+                <div className="border-b border-slate-100 pb-3">
                   <h3 className="text-lg font-bold text-slate-900 font-serif-luxury">
                     Book Repair / Polish Appointment Form
                   </h3>
@@ -197,7 +197,7 @@ export default function RepairPolishPage() {
                 </div>
 
                 {errorMsg && (
-                  <div className="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-xs text-red-700 font-bold">
+                  <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 font-bold">
                     {errorMsg}
                   </div>
                 )}
@@ -214,7 +214,7 @@ export default function RepairPolishPage() {
                       placeholder="e.g. Ramesh Giri"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                     />
                   </div>
 
@@ -228,7 +228,7 @@ export default function RepairPolishPage() {
                       placeholder="e.g. 9857XXXXXX"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                     />
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export default function RepairPolishPage() {
                     <select
                       value={itemType}
                       onChange={(e) => setItemType(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
                     >
                       <option value="24K / 22K Gold Necklace / Rani Haar">24K / 22K Gold Necklace / Rani Haar</option>
                       <option value="Gold Ring / Diamond Engagement Ring">Gold Ring / Diamond Engagement Ring</option>
@@ -261,7 +261,7 @@ export default function RepairPolishPage() {
                     <select
                       value={serviceType}
                       onChange={(e) => setServiceType(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
                     >
                       {REPAIR_SERVICES.map((s) => (
                         <option key={s.id} value={s.name}>
@@ -282,7 +282,7 @@ export default function RepairPolishPage() {
                       type="date"
                       value={preferredDate}
                       onChange={(e) => setPreferredDate(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
                     />
                   </div>
 
@@ -293,7 +293,7 @@ export default function RepairPolishPage() {
                     <select
                       value={preferredTimeSlot}
                       onChange={(e) => setPreferredTimeSlot(e.target.value)}
-                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-hidden focus:border-amber-400"
                     >
                       <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
                       <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM - 4:00 PM)</option>
@@ -313,7 +313,7 @@ export default function RepairPolishPage() {
                     placeholder="Describe the issue (e.g. broken clasp lock, missing small stone, resize ring from size 12 to 14, deep buffing polish needed)..."
                     value={damageDescription}
                     onChange={(e) => setDamageDescription(e.target.value)}
-                    className="w-full text-xs sm:text-sm p-4 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
+                    className="w-full text-xs sm:text-sm p-4 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white"
                   />
                 </div>
 
@@ -322,7 +322,7 @@ export default function RepairPolishPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 px-6 rounded-2xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="w-full py-4 px-6 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     {loading ? (
                       <div className="w-5 h-5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
@@ -352,7 +352,7 @@ export default function RepairPolishPage() {
 
         {/* Right Info Column - White & Gold */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-amber-300 shadow-md space-y-6">
+          <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-md space-y-6">
             <h3 className="text-xl font-bold font-serif-luxury text-slate-950">
               Showroom Repair Service
             </h3>

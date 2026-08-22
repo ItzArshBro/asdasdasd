@@ -196,6 +196,11 @@ export default function Footer() {
             <Link href="/contact" className="hover:text-slate-700 font-medium">
               Customer Support
             </Link>
+            <span>•</span>
+            <Link href="/admin/login" className="hover:text-slate-700 font-medium flex items-center gap-1">
+              <Lock className="w-3 h-3 text-slate-400" />
+              <span>Staff Portal</span>
+            </Link>
           </div>
         </div>
       </div>

@@ -49,11 +49,11 @@ export default async function HomePage() {
               </p>
 
               {/* Action Buttons: Clear Hierarchy */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 pt-1">
                 {/* ONE HERO BUTTON: Solid Gold, Fully Rounded Pill, No Border */}
                 <Link
                   href="/collections"
-                  className="py-4 px-8 rounded-full bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md active:scale-98"
+                  className="py-4 px-8 rounded-full bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md active:scale-98 text-center"
                 >
                   Explore Collections
                 </Link>
@@ -61,7 +61,7 @@ export default async function HomePage() {
                 {/* Secondary Button: Flat/Ghost Link */}
                 <Link
                   href="/custom-design"
-                  className="py-4 px-6 rounded-lg text-slate-700 hover:text-slate-950 font-extrabold text-sm transition-all"
+                  className="py-4 px-6 rounded-lg text-slate-700 hover:text-slate-950 font-extrabold text-sm transition-all text-center border border-slate-200 sm:border-0 hover:bg-slate-50 sm:hover:bg-transparent"
                 >
                   Order Custom Design
                 </Link>
@@ -70,7 +70,7 @@ export default async function HomePage() {
                 <Link
                   href={`https://wa.me/977${STORE_INFO.whatsapp}`}
                   target="_blank"
-                  className="py-4 px-6 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 font-extrabold text-sm transition-all flex items-center gap-2"
+                  className="py-4 px-6 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 font-extrabold text-sm transition-all flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-4 h-4 fill-emerald-800 text-emerald-50 shrink-0" />
                   <span>WhatsApp</span>
@@ -78,18 +78,18 @@ export default async function HomePage() {
               </div>
 
               {/* Trust Indicators: Flat boxes, no borders, sharp corners */}
-              <div className="grid grid-cols-3 gap-4 pt-8 border-t border-slate-100 text-left">
-                <div className="p-4 rounded-xl bg-slate-50">
-                  <div className="text-xl font-bold text-slate-900 font-serif-luxury">100%</div>
-                  <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Hallmarked</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8 border-t border-slate-100 text-left">
+                <div className="p-3 sm:p-4 rounded-xl bg-slate-50">
+                  <div className="text-lg sm:text-xl font-bold text-slate-900 font-serif-luxury">100%</div>
+                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Hallmarked</div>
                 </div>
-                <div className="p-4 rounded-xl bg-slate-50">
-                  <div className="text-xl font-bold text-slate-900 font-serif-luxury">Live Rates</div>
-                  <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Daily Sync</div>
+                <div className="p-3 sm:p-4 rounded-xl bg-slate-50">
+                  <div className="text-lg sm:text-xl font-bold text-slate-900 font-serif-luxury">Live Rates</div>
+                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Daily Sync</div>
                 </div>
-                <div className="p-4 rounded-xl bg-slate-50">
-                  <div className="text-xl font-bold text-slate-900 font-serif-luxury">Artisan Made</div>
-                  <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Devdaha Workshop</div>
+                <div className="p-3 sm:p-4 rounded-xl bg-slate-50">
+                  <div className="text-lg sm:text-xl font-bold text-slate-900 font-serif-luxury">Artisan Made</div>
+                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Devdaha Workshop</div>
                 </div>
               </div>
             </div>

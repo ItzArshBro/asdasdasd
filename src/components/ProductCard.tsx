@@ -123,7 +123,7 @@ export default function ProductCard({ product, rates }: Props) {
         </div>
 
         {/* Actions Button Grid */}
-        <div className="grid grid-cols-2 gap-2 pt-2">
+        <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 pt-2">
           {/* Add to Inquiry Cart Button */}
           <button
             type="button"

@@ -2,10 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Cinzel } from 'next/font/google';
 import './globals.css';
 import { CartProvider } from '@/context/CartContext';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import InquiryCartDrawer from '@/components/InquiryCartDrawer';
-import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton';
+import ClientLayoutWrapper from '@/components/ClientLayoutWrapper';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -43,11 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${cinzel.variable}`}>
       <body className="min-h-screen bg-[#F7F4EF] text-[#1A1A1A] flex flex-col antialiased">
         <CartProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <InquiryCartDrawer />
-          <WhatsAppFloatingButton />
+          <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
         </CartProvider>
       </body>
     </html>

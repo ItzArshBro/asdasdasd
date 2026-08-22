@@ -82,11 +82,11 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
   };
 
   return (
-    <div className={`bg-white rounded-3xl border-2 border-amber-300 shadow-lg overflow-hidden ${compact ? 'p-4 sm:p-6' : 'p-4 sm:p-8'}`}>
+    <div className={`bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden ${compact ? 'p-4 sm:p-6' : 'p-4 sm:p-8'}`}>
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-amber-200">
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-100">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-gold-gradient text-slate-950 shadow-md">
+          <div className="p-3 rounded-xl bg-gold-gradient text-slate-950 shadow-md">
             <Calculator className="w-6 h-6" />
           </div>
           <div>
@@ -110,28 +110,28 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
 
       {/* Live Reference Rate Badges */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 my-6">
-        <div className="p-3.5 rounded-2xl bg-white border border-amber-300 shadow-3xs">
+        <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-3xs">
           <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">24K Fine Gold</span>
           <div className="text-sm sm:text-base font-extrabold text-amber-900 mt-0.5 font-serif-luxury">
             NPR {rates.gold24kPerTola.toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/tola</span>
           </div>
         </div>
 
-        <div className="p-3.5 rounded-2xl bg-white border border-amber-300 shadow-3xs">
+        <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-3xs">
           <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">22K Tejabi Gold</span>
           <div className="text-sm sm:text-base font-extrabold text-amber-900 mt-0.5 font-serif-luxury">
             NPR {rates.gold22kPerTola.toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/tola</span>
           </div>
         </div>
 
-        <div className="p-3.5 rounded-2xl bg-white border border-amber-300 shadow-3xs">
+        <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-3xs">
           <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">18K Hallmarked</span>
           <div className="text-sm sm:text-base font-extrabold text-amber-900 mt-0.5 font-serif-luxury">
             NPR {rates.gold18kPerGram.toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/g</span>
           </div>
         </div>
 
-        <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-3xs">
+        <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-3xs">
           <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Fine Silver (999)</span>
           <div className="text-sm sm:text-base font-extrabold text-slate-900 mt-0.5 font-serif-luxury">
             NPR {rates.silverPerTola.toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/tola</span>
@@ -148,7 +148,7 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
               1. Select Metal &amp; Purity
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-              {[
+              { [
                 { id: 'gold_24k', label: '24K Fine Gold', sub: 'छापावाल सुन (99.5%)' },
                 { id: 'gold_22k', label: '22K Tejabi Gold', sub: 'तेजाबी सुन (91.6%)' },
                 { id: 'gold_18k', label: '18K Gold', sub: '१८ क्यारेट (75%)' },
@@ -160,9 +160,9 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
                   key={m.id}
                   type="button"
                   onClick={() => setMetalType(m.id as MetalType)}
-                  className={`p-3 rounded-2xl text-left border-2 transition-all ${
+                  className={`p-3 rounded-xl text-left border transition-all ${
                     metalType === m.id
-                      ? 'border-amber-400 bg-amber-50/50 shadow-xs animate-in fade-in-50'
+                      ? 'border-amber-500 bg-amber-50/50 shadow-xs animate-in fade-in-50'
                       : 'border-slate-200 bg-white hover:border-amber-300'
                   }`}
                 >
@@ -206,7 +206,7 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
                 value={weight || ''}
                 onChange={(e) => setWeight(parseFloat(e.target.value) || 0)}
                 placeholder="Enter weight..."
-                className="w-full text-base sm:text-lg font-extrabold text-slate-900 px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white shadow-2xs"
+                className="w-full text-base sm:text-lg font-extrabold text-slate-900 px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-hidden focus:border-amber-400 bg-white shadow-2xs"
               />
               <span className="absolute right-4 top-3.5 text-xs font-bold text-slate-400 uppercase">
                 {unit}
@@ -249,7 +249,7 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
           {/* Making Charges & Wastage */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Making Charge */}
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-3xs">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-3xs">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-800">Making Charge</span>
                 <div className="flex text-[11px] bg-slate-100 rounded-lg p-0.5 font-bold">
@@ -306,7 +306,7 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
             </div>
 
             {/* Wastage */}
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-3xs">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-3xs">
               <span className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
                 Wastage / Jhad (Optional)
               </span>
@@ -332,9 +332,9 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
         </div>
 
         {/* Right Output Summary Card - Pure White with Gold Accents */}
-        <div className="lg:col-span-5 flex flex-col justify-between p-5 sm:p-7 rounded-3xl bg-white border-2 border-amber-300 shadow-md">
+        <div className="lg:col-span-5 flex flex-col justify-between p-5 sm:p-7 rounded-xl bg-white border border-slate-200 shadow-md">
           <div>
-            <div className="flex items-center justify-between pb-4 border-b border-amber-200">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100">
               <span className="text-xs font-bold text-amber-900 uppercase tracking-widest flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-amber-700" />
                 Live Price Estimate
@@ -360,7 +360,7 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
             </div>
 
             {/* Calculation Breakdown Table */}
-            <div className="space-y-2.5 pt-4 border-t border-amber-200 text-xs">
+            <div className="space-y-2.5 pt-4 border-t border-slate-100 text-xs">
               <div className="flex justify-between items-center text-slate-700">
                 <span className="font-medium">Raw Metal Cost ({calculation.metalLabel}):</span>
                 <span className="font-bold text-slate-900">{formatNPR(calculation.metalCost)}</span>
@@ -380,7 +380,7 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
                 </div>
               )}
 
-              <div className="flex justify-between items-center text-slate-500 pt-2 border-t border-amber-200/80 text-[11px]">
+              <div className="flex justify-between items-center text-slate-500 pt-2 border-t border-slate-100 text-[11px]">
                 <span>Rate applied:</span>
                 <span className="font-bold text-slate-800">NPR {Math.round(calculation.pricePerTola).toLocaleString('en-IN')} / tola</span>
               </div>
@@ -388,10 +388,10 @@ export default function MetalPriceCalculator({ initialRates, compact = false }: 
           </div>
 
           {/* Action Button: Share via WhatsApp */}
-          <div className="mt-8 pt-4 border-t border-amber-200 space-y-3">
+          <div className="mt-8 pt-4 border-t border-slate-100 space-y-3">
             <button
               onClick={handleWhatsAppShare}
-              className="w-full flex items-center justify-center gap-2 py-4 px-4 rounded-2xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md active:scale-98"
+              className="w-full flex items-center justify-center gap-2 py-4 px-4 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md active:scale-98"
             >
               <MessageCircle className="w-5 h-5 text-slate-950 fill-slate-950" />
               <span>Inquire &amp; Order via WhatsApp</span>

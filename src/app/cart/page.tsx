@@ -95,8 +95,8 @@ export default function CartPage() {
 
       {/* Empty State Card */}
       {items.length === 0 ? (
-        <div className="py-20 text-center bg-white rounded-3xl border-2 border-amber-200 p-8 space-y-6 max-w-2xl mx-auto shadow-2xs">
-          <div className="w-20 h-20 rounded-full bg-white border-2 border-amber-300 text-amber-800 flex items-center justify-center mx-auto shadow-sm">
+        <div className="py-20 text-center bg-white rounded-xl border border-slate-200 p-8 space-y-6 max-w-2xl mx-auto shadow-2xs">
+          <div className="w-20 h-20 rounded-full bg-white border border-slate-200 text-amber-800 flex items-center justify-center mx-auto shadow-sm">
             <ShoppingBag className="w-10 h-10" />
           </div>
           <div className="space-y-2">
@@ -109,7 +109,7 @@ export default function CartPage() {
           </div>
           <Link
             href="/collections"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gold-gradient text-slate-950 font-extrabold text-sm shadow-md hover:brightness-105 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm shadow-md hover:brightness-105 transition-all"
           >
             <Gem className="w-4 h-4" />
             <span>Explore Jewellery Catalog</span>
@@ -120,7 +120,7 @@ export default function CartPage() {
           {/* Left Column: Cart Items List */}
           <div className="lg:col-span-7 space-y-4">
             {/* Info Banner */}
-            <div className="p-4 rounded-2xl bg-white border border-amber-200 text-xs text-slate-800 flex items-start gap-3 shadow-3xs">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 flex items-start gap-3 shadow-3xs">
               <Sparkles className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold">WhatsApp Direct Inquiry Checkout:</span>
@@ -139,10 +139,10 @@ export default function CartPage() {
                 return (
                   <div
                     key={item.product.id}
-                    className="p-4 rounded-3xl border-2 border-slate-200 bg-white shadow-2xs hover:border-amber-300 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                    className="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs hover:border-amber-300 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-20 h-20 rounded-2xl overflow-hidden bg-slate-50 shrink-0 border border-slate-200">
+                      <div className="w-20 h-20 rounded-xl overflow-hidden bg-slate-50 shrink-0 border border-slate-200">
                         <img
                           src={
                             item.product.images?.[0] ||
@@ -173,7 +173,7 @@ export default function CartPage() {
 
                     <div className="flex items-center justify-between w-full sm:w-auto gap-6 sm:border-l sm:pl-6 border-slate-200">
                       {/* Quantity Modifier */}
-                      <div className="flex items-center border-2 border-slate-200 rounded-xl bg-slate-50">
+                      <div className="flex items-center border border-slate-200 rounded-xl bg-slate-50">
                         <button
                           onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
                           className="p-1.5 text-slate-600 hover:text-slate-900 font-bold"
@@ -222,8 +222,8 @@ export default function CartPage() {
 
           {/* Right Column: Checkout Summary - Pure White with Gold */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-amber-300 shadow-md space-y-6">
-              <div className="border-b border-amber-200 pb-4 flex items-center justify-between">
+            <div className="bg-white text-slate-900 rounded-xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+              <div className="border-b border-slate-100 pb-4 flex items-center justify-between">
                 <h3 className="text-lg font-bold font-serif-luxury text-slate-950">
                   Inquiry Order Summary
                 </h3>
@@ -244,7 +244,7 @@ export default function CartPage() {
                   <span className="font-bold text-slate-900">{formatNPR(totalEstPrice)}</span>
                 </div>
 
-                <div className="flex justify-between items-baseline pt-3 border-t border-amber-200">
+                <div className="flex justify-between items-baseline pt-3 border-t border-slate-100">
                   <span className="text-sm font-bold text-amber-900">Estimated Total:</span>
                   <span className="text-2xl font-extrabold text-slate-950 font-serif-luxury">
                     {formatNPR(totalEstPrice)}
@@ -253,7 +253,7 @@ export default function CartPage() {
               </div>
 
               {/* Customer Contact Inputs */}
-              <div className="space-y-3 pt-2 border-t border-amber-200">
+              <div className="space-y-3 pt-2 border-t border-slate-100">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-800 block">
                   Your Details (For WhatsApp Message)
                 </span>
@@ -264,7 +264,7 @@ export default function CartPage() {
                     placeholder="Your Name (e.g. Sunil Karki)..."
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full text-xs px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white text-slate-900 focus:outline-hidden focus:border-amber-400"
+                    className="w-full text-xs px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-hidden focus:border-amber-400"
                   />
                 </div>
 
@@ -274,7 +274,7 @@ export default function CartPage() {
                     placeholder="Phone / WhatsApp (e.g. 9847XXXXXX)..."
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
-                    className="w-full text-xs px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white text-slate-900 focus:outline-hidden focus:border-amber-400"
+                    className="w-full text-xs px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-hidden focus:border-amber-400"
                   />
                 </div>
 
@@ -284,7 +284,7 @@ export default function CartPage() {
                     placeholder="Questions on custom sizing, delivery date, or visiting Devdaha showroom..."
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="w-full text-xs px-4 py-3 rounded-2xl border-2 border-slate-200 bg-white text-slate-900 focus:outline-hidden focus:border-amber-400"
+                    className="w-full text-xs px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-hidden focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -294,7 +294,7 @@ export default function CartPage() {
                 <button
                   type="button"
                   onClick={handleCheckoutWhatsApp}
-                  className="w-full py-4 px-6 rounded-2xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 active:scale-98"
+                  className="w-full py-4 px-6 rounded-xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 active:scale-98"
                 >
                   <MessageCircle className="w-5 h-5 fill-slate-950" />
                   <span>Inquire &amp; Purchase via WhatsApp</span>
