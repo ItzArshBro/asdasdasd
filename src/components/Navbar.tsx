@@ -49,7 +49,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5 whitespace-nowrap">
-                <span className="text-base sm:text-lg font-extrabold tracking-wide text-slate-950 font-serif-luxury uppercase">
+                <span className="text-sm xs:text-base sm:text-lg font-extrabold tracking-wide text-slate-950 font-serif-luxury uppercase">
                   RAMBADEVI
                 </span>
                 <span className="text-[9px] font-extrabold px-1.5 py-0.2 rounded-full bg-gold-gradient text-slate-950 shadow-2xs">
@@ -102,12 +102,12 @@ export default function Navbar() {
             {/* Inquiry Cart Button - Single Line */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative px-3.5 py-1.5 rounded-full bg-gold-gradient text-slate-950 font-extrabold text-xs hover:brightness-105 transition-all flex items-center gap-1.5 shadow-sm active:scale-95 whitespace-nowrap"
+              className="relative px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-gold-gradient text-slate-950 font-extrabold text-xs hover:brightness-105 transition-all flex items-center gap-1 sm:gap-1.5 shadow-sm active:scale-95 whitespace-nowrap"
               aria-label="Open Inquiry Cart"
             >
               <ShoppingBag className="w-3.5 h-3.5 text-slate-950" />
-              <span>Cart</span>
-              <span className="min-w-[18px] h-4.5 px-1 rounded-full bg-slate-950 text-white font-extrabold text-[10px] flex items-center justify-center shadow-xs">
+              <span className="hidden xs:inline">Cart</span>
+              <span className="min-w-[17px] h-4 px-1 rounded-full bg-slate-950 text-white font-extrabold text-[9px] flex items-center justify-center shadow-xs">
                 {totalItemsCount}
               </span>
             </button>
