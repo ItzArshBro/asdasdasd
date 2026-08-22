@@ -70,13 +70,12 @@ export default function CartPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 bg-transparent">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-amber-200">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
-            <ShoppingBag className="w-3.5 h-3.5" />
-            <span>WhatsApp Inquiry Cart</span>
+          <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800 mb-1">
+            WhatsApp Inquiry Cart
           </div>
           <h1 className="text-3xl font-extrabold text-slate-950 font-serif-luxury">
             Your Selected Jewellery

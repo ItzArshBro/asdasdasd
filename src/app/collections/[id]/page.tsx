@@ -112,7 +112,7 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12 bg-transparent">
       {/* Breadcrumb Navigation */}
       <div className="flex items-center gap-2 text-xs text-slate-500 font-medium">
         <Link href="/" className="hover:text-amber-800">Home</Link>
@@ -126,7 +126,7 @@ export default function ProductDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* Left Column: Image Gallery */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="rounded-3xl overflow-hidden aspect-4/3 sm:aspect-square bg-slate-50 border-2 border-amber-200 shadow-sm relative group">
+          <div className="rounded-xl overflow-hidden aspect-4/3 sm:aspect-square bg-slate-50 border border-slate-200 shadow-sm relative group">
             <img
               src={
                 product.images?.[selectedImageIndex] ||

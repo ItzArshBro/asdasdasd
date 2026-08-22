@@ -22,9 +22,9 @@ export default async function HomePage() {
   const rates = getDailyRates();
 
   return (
-    <div className="space-y-24 sm:space-y-36 pb-24 bg-white">
+    <div className="space-y-24 sm:space-y-36 pb-24 bg-[#F7F4EF]">
       {/* Hero Section */}
-      <section className="relative bg-white text-slate-900 overflow-hidden pt-12 pb-20 sm:pb-28 border-b border-slate-100">
+      <section className="relative bg-[#F7F4EF] text-slate-900 overflow-hidden pt-12 pb-20 sm:pb-28 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Content */}

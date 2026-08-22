@@ -9,13 +9,12 @@ export default async function LiveRatesPage() {
   const rates = getDailyRates();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 bg-transparent">
       {/* Page Header - Pure White & Gold Theme */}
-      <div className="rounded-3xl bg-white text-slate-900 p-8 sm:p-10 relative overflow-hidden border-2 border-amber-300 shadow-sm">
+      <div className="rounded-xl bg-white text-slate-900 p-8 sm:p-10 relative overflow-hidden border border-slate-200 shadow-sm">
         <div className="relative z-10 max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-xs font-bold shadow-2xs">
-            <TrendingUp className="w-3.5 h-3.5 text-amber-700" />
-            <span>FENEGOSIDA Synced Daily Rates</span>
+          <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800">
+            FENEGOSIDA Synced Daily Rates
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif-luxury tracking-tight text-slate-950">
             Live Daily Metal Price Calculator
