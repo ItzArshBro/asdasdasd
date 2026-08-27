@@ -31,6 +31,24 @@
   background: linear-gradient(135deg, #111111 0%, #333333 50%, #111111 100%);
 }
 
+.bg-gold-gradient.text-slate-950,
+.bg-gold-gradient .text-slate-950,
+.bg-gold-gradient.text-slate-900,
+.bg-gold-gradient .text-slate-900,
+.bg-gold-gradient.text-neutral-950,
+.bg-gold-gradient .text-neutral-950,
+.bg-gold-gradient.text-emerald-800,
+.bg-gold-gradient .text-emerald-800,
+.bg-gold-gradient.text-amber-900,
+.bg-gold-gradient .text-amber-900 {
+  color: #ffffff !important;
+}
+
+.bg-gold-gradient svg,
+.bg-gold-gradient svg * {
+  stroke: #ffffff !important;
+}
+
 .bg-gold-gradient-soft {
   background: linear-gradient(135deg, rgba(17, 17, 17, 0.05) 0%, rgba(51, 51, 51, 0.08) 50%, rgba(17, 17, 17, 0.05) 100%);
 }

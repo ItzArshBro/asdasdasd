@@ -26,10 +26,16 @@ export default function ProductCarousel({ products, rates, categoryFilter, darkT
     displayedProducts = products.filter(
       (p) => p.category.toLowerCase() === categoryFilter.toLowerCase()
     );
+    
+    // If the database has products, but none match this specific category filter,
+    // display all real database products instead of the mock sample data!
+    if (displayedProducts.length === 0 && products.length > 0) {
+      displayedProducts = products;
+    }
   }
 
-  // Fallback to high-end sample data if there are no products
-  if (displayedProducts.length === 0) {
+  // Fallback to high-end sample data ONLY if there are absolutely no products in the database
+  if (displayedProducts.length === 0 && products.length === 0) {
     const isRingFilter = categoryFilter?.toLowerCase().includes('ring');
     
     const sampleRings: Product[] = [

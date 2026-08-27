@@ -88,12 +88,12 @@ export default function InquiryCartDrawer() {
       />
 
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between border-l border-amber-300">
+        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between border-l border-neutral-200">
           {/* Drawer Header */}
-          <div className="p-5 border-b border-amber-200 bg-amber-50/70 text-slate-900 flex items-center justify-between">
+          <div className="p-5 border-b border-neutral-150 bg-neutral-50 text-slate-900 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-gold-gradient text-slate-950 shadow-2xs">
-                <ShoppingBag className="w-5 h-5" />
+              <div className="p-2 rounded-xl bg-gold-gradient text-white shadow-2xs">
+                <ShoppingBag className="w-5 h-5 text-white" />
               </div>
               <div>
                 <h3 className="font-extrabold text-base font-serif-luxury text-slate-900">
@@ -117,7 +117,7 @@ export default function InquiryCartDrawer() {
           <div className="flex-1 overflow-y-auto p-5 space-y-5">
             {items.length === 0 ? (
               <div className="py-16 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-amber-50 border-2 border-amber-200 flex items-center justify-center mx-auto text-amber-800">
+                <div className="w-16 h-16 rounded-full bg-neutral-50 border-2 border-neutral-200 flex items-center justify-center mx-auto text-neutral-800">
                   <ShoppingBag className="w-8 h-8" />
                 </div>
                 <div>
@@ -131,17 +131,17 @@ export default function InquiryCartDrawer() {
                 <Link
                   href="/collections"
                   onClick={() => setIsCartOpen(false)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold-gradient text-slate-950 font-bold text-xs shadow-md hover:brightness-105 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold-gradient text-white font-bold text-xs shadow-md hover:brightness-105 transition-all"
                 >
-                  <Sparkles className="w-4 h-4" />
+                  <Sparkles className="w-4 h-4 text-white" />
                   <span>Browse Jewellery Catalog</span>
                 </Link>
               </div>
             ) : (
               <>
                 {/* Notice Banner */}
-                <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-slate-800 flex items-start gap-2.5">
-                  <Sparkles className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                <div className="p-3.5 rounded-2xl bg-neutral-50 border border-neutral-200 text-xs text-slate-800 flex items-start gap-2.5">
+                  <Sparkles className="w-4 h-4 text-neutral-500 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold">No online card payment required!</span>
                     <p className="text-[11px] text-slate-600 mt-0.5 leading-relaxed">
@@ -157,7 +157,7 @@ export default function InquiryCartDrawer() {
                     return (
                       <div
                         key={item.product.id}
-                        className="p-3.5 rounded-2xl border border-slate-200 bg-white shadow-2xs hover:border-amber-300 transition-colors flex gap-3"
+                        className="p-3.5 rounded-2xl border border-slate-200 bg-white shadow-2xs hover:border-neutral-450 transition-colors flex gap-3"
                       >
                         {/* Thumbnail */}
                         <div className="w-20 h-20 rounded-xl overflow-hidden bg-slate-50 shrink-0 border border-slate-200">
@@ -188,7 +188,7 @@ export default function InquiryCartDrawer() {
                             </div>
 
                             <div className="flex items-center gap-2 text-[10px] text-slate-500 mt-0.5">
-                              <span className="font-bold px-1.5 py-0.5 rounded bg-amber-100/80 text-amber-900">
+                              <span className="font-bold px-1.5 py-0.5 rounded bg-neutral-100 text-neutral-800">
                                 {item.product.karat}
                               </span>
                               <span>•</span>
@@ -239,7 +239,7 @@ export default function InquiryCartDrawer() {
                       placeholder="Your Full Name..."
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:border-neutral-800"
                     />
                   </div>
 
@@ -249,7 +249,7 @@ export default function InquiryCartDrawer() {
                       placeholder="Phone / WhatsApp (e.g. 9841XXXXXX)..."
                       value={customerPhone}
                       onChange={(e) => setCustomerPhone(e.target.value)}
-                      className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:border-neutral-800"
                     />
                   </div>
 
@@ -259,7 +259,7 @@ export default function InquiryCartDrawer() {
                       placeholder="Any specific questions, sizing, or making charge inquiry..."
                       value={inquiryNotes}
                       onChange={(e) => setInquiryNotes(e.target.value)}
-                      className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:border-amber-400"
+                      className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:border-neutral-800"
                     />
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default function InquiryCartDrawer() {
 
           {/* Drawer Footer / Checkout */}
           {items.length > 0 && (
-            <div className="p-5 border-t border-amber-200 bg-white space-y-4 shadow-lg">
+            <div className="p-5 border-t border-neutral-150 bg-white space-y-4 shadow-lg">
               {/* Totals Breakdown */}
               <div className="space-y-1.5 text-xs">
                 <div className="flex justify-between text-slate-500">
@@ -293,9 +293,9 @@ export default function InquiryCartDrawer() {
               <button
                 type="button"
                 onClick={handleCheckoutWhatsApp}
-                className="w-full py-4 px-4 rounded-2xl bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 active:scale-98"
+                className="w-full py-4 px-4 rounded-2xl bg-gold-gradient text-white font-extrabold text-sm hover:brightness-105 transition-all shadow-md flex items-center justify-center gap-2 active:scale-98"
               >
-                <MessageCircle className="w-5 h-5 text-slate-950 fill-slate-950" />
+                <MessageCircle className="w-5 h-5 text-white fill-white" />
                 <span>Inquire &amp; Purchase via WhatsApp</span>
               </button>
 
@@ -309,7 +309,7 @@ export default function InquiryCartDrawer() {
                 <Link
                   href="/cart"
                   onClick={() => setIsCartOpen(false)}
-                  className="text-amber-800 font-bold hover:underline flex items-center gap-1"
+                  className="text-neutral-900 font-bold hover:underline flex items-center gap-1"
                 >
                   <span>Open Full Cart Page</span>
                   <ArrowRight className="w-3.5 h-3.5" />
