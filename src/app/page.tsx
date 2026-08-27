@@ -18,7 +18,7 @@ export default async function HomePage() {
   const rates = await getDailyRates();
 
   return (
-    <div className="pb-24 bg-[#F7F4EF] text-slate-900 font-sans">
+    <div className="pb-24 bg-[#FAFAFA] text-slate-900 font-sans">
       
       {/* 1. Hero Section with Loop Video Background */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-black overflow-hidden pt-20 pb-32">
@@ -155,7 +155,7 @@ export default async function HomePage() {
             {/* Title / Description */}
             <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
               <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-500">
                   Luxury Collection
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-serif-luxury mt-1 leading-tight">
@@ -228,7 +228,7 @@ export default async function HomePage() {
       {/* 5. Live Metal Price Calculator Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800 mb-2">
+          <div className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-500 mb-2">
             Interactive Calculator
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-serif-luxury">
@@ -248,7 +248,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div className="lg:col-span-7 space-y-6">
-              <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800">
+              <div className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-500">
                 Visit Our Showroom
               </div>
 
@@ -273,9 +273,9 @@ export default async function HomePage() {
                 <Link
                   href={`https://wa.me/977${STORE_INFO.whatsapp}?text=${encodeURIComponent('Namaste RAMBADEVI Jewellers, I would like to schedule a visit to your Devdaha showroom.')}`}
                   target="_blank"
-                  className="py-3 px-5 rounded-lg bg-emerald-50 text-emerald-800 font-extrabold text-xs hover:bg-emerald-100 flex items-center gap-1.5 transition-colors"
+                  className="py-3 px-5 rounded-lg bg-neutral-900 text-white font-extrabold text-xs hover:bg-neutral-800 flex items-center gap-1.5 transition-colors"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 fill-emerald-800 text-emerald-50" />
+                  <MessageCircle className="w-3.5 h-3.5 fill-white text-neutral-900" />
                   <span>Notify Us Before Visiting</span>
                 </Link>
 
