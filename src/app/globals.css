@@ -8,6 +8,10 @@
     --accent: #111111;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: #FAFAFA !important;
     color: #111111;
