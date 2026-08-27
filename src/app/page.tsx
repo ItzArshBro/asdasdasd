@@ -3,16 +3,12 @@ import Link from 'next/link';
 import { getProducts, getDailyRates } from '@/lib/db';
 import { STORE_INFO } from '@/lib/constants';
 import MetalPriceCalculator from '@/components/MetalPriceCalculator';
-import ProductCard from '@/components/ProductCard';
+import ProductCarousel from '@/components/ProductCarousel';
 import {
   Sparkles,
-  Gem,
-  Calculator,
-  Hammer,
-  MapPin,
-  Clock,
   ArrowRight,
   MessageCircle,
+  MapPin,
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -22,118 +18,215 @@ export default async function HomePage() {
   const rates = await getDailyRates();
 
   return (
-    <div className="space-y-24 sm:space-y-36 pb-24 bg-[#F7F4EF]">
-      {/* Hero Section */}
-      <section className="relative bg-[#F7F4EF] text-slate-900 overflow-hidden pt-12 pb-20 sm:pb-28 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Hero Content */}
-            <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
-              {/* Clean text-only tag instead of pill badge */}
-              <div className="text-[11px] font-bold uppercase tracking-widest text-amber-800">
-                Devdaha-5, Khaireni • Hallmark 24K &amp; 22K Gold
-              </div>
+    <div className="pb-24 bg-[#F7F4EF] text-slate-900 font-sans">
+      
+      {/* 1. Hero Section with Loop Video Background */}
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-black overflow-hidden pt-20 pb-32">
+        {/* Dark Muted Video Overlay */}
+        <div className="absolute inset-0 bg-black/65 z-10" />
+        
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+        >
+          <source src="/pinterest_video.mp4" type="video/mp4" />
+        </video>
 
-              {/* Clean Luxury Headline */}
-              <div className="space-y-3">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-serif-luxury text-slate-950 leading-tight">
-                  Pure 24K Gold &amp; Bridal Grandeur
-                </h1>
-                <p className="text-xl sm:text-2xl font-bold font-serif-luxury text-amber-800">
-                  Timeless Craftsmanship for Every Generation
-                </p>
-              </div>
+        {/* Centered Hero Content */}
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-20 space-y-6">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white font-serif-luxury leading-tight animate-fade-in">
+            Discover Your Sparkle
+          </h1>
+          
+          <p className="text-[10px] sm:text-xs text-neutral-300 max-w-md mx-auto uppercase tracking-[0.25em] font-semibold leading-relaxed">
+            Welcoming In The Spring Season With An Enchanting Emerald, Diamond &amp; Gold Dance With Earrings
+          </p>
 
-              <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed font-medium">
-                Welcome to <strong className="text-slate-950 font-extrabold">RAMBADEVI Jewellers</strong> in Devdaha-5, Khaireni, Rupandehi. Authentic 24K Chhapawal pure gold, royal 22K bridal sets, and bespoke custom design orders.
-              </p>
-
-              {/* Action Buttons: Clear Hierarchy */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 pt-1">
-                {/* ONE HERO BUTTON: Solid Gold, Fully Rounded Pill, No Border */}
-                <Link
-                  href="/collections"
-                  className="py-4 px-8 rounded-full bg-gold-gradient text-slate-950 font-extrabold text-sm hover:brightness-105 transition-all shadow-md active:scale-98 text-center"
-                >
-                  Explore Collections
-                </Link>
-
-                {/* Secondary Button: Flat/Ghost Link */}
-                <Link
-                  href="/custom-design"
-                  className="py-4 px-6 rounded-lg text-slate-700 hover:text-slate-950 font-extrabold text-sm transition-all text-center border border-slate-200 sm:border-0 hover:bg-slate-50 sm:hover:bg-transparent"
-                >
-                  Order Custom Design
-                </Link>
-
-                {/* Flat WhatsApp button with light bg and no border */}
-                <Link
-                  href={`https://wa.me/977${STORE_INFO.whatsapp}`}
-                  target="_blank"
-                  className="py-4 px-6 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 font-extrabold text-sm transition-all flex items-center justify-center gap-2"
-                >
-                  <MessageCircle className="w-4 h-4 fill-emerald-800 text-emerald-50 shrink-0" />
-                  <span>WhatsApp</span>
-                </Link>
-              </div>
-
-              {/* Trust Indicators: Flat boxes, no borders, sharp corners */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8 border-t border-slate-100 text-left">
-                <div className="p-3 sm:p-4 rounded-xl bg-slate-50">
-                  <div className="text-lg sm:text-xl font-bold text-slate-900 font-serif-luxury">100%</div>
-                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Hallmarked</div>
-                </div>
-                <div className="p-3 sm:p-4 rounded-xl bg-slate-50">
-                  <div className="text-lg sm:text-xl font-bold text-slate-900 font-serif-luxury">Live Rates</div>
-                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Daily Sync</div>
-                </div>
-                <div className="p-3 sm:p-4 rounded-xl bg-slate-50">
-                  <div className="text-lg sm:text-xl font-bold text-slate-900 font-serif-luxury">Artisan Made</div>
-                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Devdaha Workshop</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Hero Info Card: Soft Cream bg shift, no border, sharp corners */}
-            <div className="lg:col-span-5">
-              <div className="p-8 rounded-2xl bg-[#FDF8F0] shadow-sm space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold font-serif-luxury text-slate-950">
-                    RAMBADEVI Showroom
-                  </h3>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">Devdaha-5, Khaireni</p>
-                </div>
-
-                <div className="space-y-4 text-xs text-slate-600 leading-relaxed font-medium">
-                  <p>
-                    Real-time daily metal rates calculated with Nepali gold market standards.
-                  </p>
-                  <p>
-                    Traditional gold filigree and custom bridal design orders prepared by master goldsmiths.
-                  </p>
-                  <p>
-                    In-house precision ring resizing, laser repairs, and ultrasonic high-gloss cleaning.
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-amber-200/50 flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Contact</span>
-                  <Link
-                    href={`https://wa.me/977${STORE_INFO.whatsapp}`}
-                    target="_blank"
-                    className="text-xs font-bold text-amber-900 hover:underline"
-                  >
-                    +977 9857073727
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <Link
+              href="/collections"
+              className="px-8 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-all active:scale-98"
+            >
+              Buy Now
+            </Link>
+            <Link
+              href="#collections-slider"
+              className="px-8 py-3.5 rounded-full border border-white/60 bg-transparent text-white font-extrabold text-xs uppercase tracking-wider hover:bg-white/10 transition-all active:scale-98"
+            >
+              Explore
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Live Metal Price Calculator Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 2. Overlapping Category Cards Grid */}
+      <section className="relative -mt-24 sm:-mt-28 z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          {/* Card 1: Rings */}
+          <Link
+            href="/collections?category=Rings"
+            className="group rounded-2xl bg-white border border-neutral-100 p-5 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 min-h-[300px]"
+          >
+            <div>
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-400">
+                Categories
+              </span>
+              <h3 className="text-xl font-bold text-neutral-900 font-serif-luxury mt-0.5">
+                Rings
+              </h3>
+            </div>
+            <div className="w-full h-36 my-3 relative overflow-hidden bg-neutral-50 rounded-xl flex items-center justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop"
+                alt="Gold & Diamond Rings"
+                className="max-h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <span className="text-xs font-bold text-neutral-950 flex items-center gap-1 mt-1 group-hover:underline">
+              <span>Check More Product</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </Link>
+
+          {/* Card 2: Couple Rings */}
+          <Link
+            href="/collections?category=Rings"
+            className="group rounded-2xl bg-white border border-neutral-100 p-5 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 min-h-[300px]"
+          >
+            <div>
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-400">
+                Categories
+              </span>
+              <h3 className="text-xl font-bold text-neutral-900 font-serif-luxury mt-0.5">
+                Couple Rings
+              </h3>
+            </div>
+            <div className="w-full h-36 my-3 relative overflow-hidden bg-neutral-50 rounded-xl flex items-center justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=600&auto=format&fit=crop"
+                alt="Couple Rings Set"
+                className="max-h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <span className="text-xs font-bold text-neutral-950 flex items-center gap-1 mt-1 group-hover:underline">
+              <span>Check More Product</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </Link>
+
+          {/* Card 3: Earrings */}
+          <Link
+            href="/collections?category=Earrings%20%26%20Jhumkas"
+            className="group rounded-2xl bg-white border border-neutral-100 p-5 flex flex-col justify-between shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 min-h-[300px]"
+          >
+            <div>
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-400">
+                Categories
+              </span>
+              <h3 className="text-xl font-bold text-neutral-900 font-serif-luxury mt-0.5">
+                Earrings
+              </h3>
+            </div>
+            <div className="w-full h-36 my-3 relative overflow-hidden bg-neutral-50 rounded-xl flex items-center justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?q=80&w=600&auto=format&fit=crop"
+                alt="Exquisite Earrings"
+                className="max-h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <span className="text-xs font-bold text-neutral-950 flex items-center gap-1 mt-1 group-hover:underline">
+              <span>Check More Product</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* 3. Diamonds & Engagement Ring Carousel (White Background) */}
+      <section id="collections-slider" className="bg-white py-24 mb-24 border-y border-neutral-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Title / Description */}
+            <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+              <div>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800">
+                  Luxury Collection
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-serif-luxury mt-1 leading-tight">
+                  Diamonds &amp; Engagement Rings
+                </h2>
+              </div>
+              
+              <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed font-medium">
+                Experience the beauty of gold and diamond jewellery and find your perfect piece for a special occasion. Handcrafted designs tailored to capture eternal memories.
+              </p>
+
+              <Link
+                href="/collections"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-neutral-950 text-white font-extrabold text-xs uppercase tracking-wider hover:bg-neutral-800 transition-all"
+              >
+                More Products
+              </Link>
+            </div>
+
+            {/* Slider Product List */}
+            <div className="lg:col-span-8 w-full overflow-hidden">
+              <ProductCarousel
+                products={products}
+                rates={rates}
+                categoryFilter="Rings"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Textured Fabric Carousel Section (Black Silk Background) */}
+      <section
+        className="relative py-24 mb-24 bg-black overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/black-silk.jfif')" }}
+      >
+        {/* Dark overlay to ensure contrast */}
+        <div className="absolute inset-0 bg-black/60 z-0 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col space-y-8">
+            
+            {/* Heading row */}
+            <div className="flex flex-wrap items-end justify-between gap-4 pb-4 border-b border-white/10">
+              <div>
+                <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-neutral-400">
+                  Featured Ornaments
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-serif-luxury mt-1">
+                  Find The Perfect Diamond For
+                </h2>
+              </div>
+            </div>
+
+            {/* Dark Styled Slider */}
+            <div className="w-full overflow-hidden">
+              <ProductCarousel
+                products={products}
+                rates={rates}
+                categoryFilter="Earrings & Jhumkas"
+                darkTheme={true}
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Live Metal Price Calculator Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800 mb-2">
             Interactive Calculator
@@ -149,127 +242,11 @@ export default async function HomePage() {
         <MetalPriceCalculator initialRates={rates} />
       </section>
 
-      {/* Featured Collections Section */}
+      {/* 6. Showroom Visit & Location Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-4 mb-8 pb-4 border-b border-slate-100">
-          <div>
-            <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800 mb-1">
-              Showroom Highlights
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-serif-luxury">
-              Showroom Jewellery Collections
-            </h2>
-          </div>
-
-          <Link
-            href="/collections"
-            className="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-800 hover:text-amber-950 hover:underline uppercase tracking-wider"
-          >
-            <span>View All Collections</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-
-        {/* Products Grid or Real Empty State */}
-        {products.length === 0 ? (
-          <div className="p-10 rounded-xl bg-[#FDF8F0] text-center space-y-4 max-w-xl mx-auto shadow-2xs">
-            <h3 className="text-lg font-bold font-serif-luxury text-slate-900">
-              Fresh Showroom Arrivals Coming Soon
-            </h3>
-            <p className="text-xs text-slate-600 leading-relaxed font-medium">
-              We craft each jewellery ornament upon order or showcase in our Devdaha showroom. Have a specific design in mind? Order your custom design or chat with us on WhatsApp.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <Link
-                href="/custom-design"
-                className="px-5 py-2.5 rounded-full bg-gold-gradient text-slate-950 font-bold text-xs shadow-xs"
-              >
-                Order Custom Design
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.slice(0, 6).map((product) => (
-              <ProductCard key={product.id} product={product} rates={rates} />
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* Feature Service Banners - Cream Background panels, no borders, clean design */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Card 1: Order Custom Design */}
-          <div className="rounded-xl p-8 bg-[#FDF8F0] shadow-xs flex flex-col justify-between space-y-8">
-            <div className="space-y-6">
-              <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800">
-                  Bespoke Craftsmanship
-                </span>
-                <h3 className="text-2xl font-bold text-slate-950 font-serif-luxury mt-1">
-                  Order Custom Design
-                </h3>
-              </div>
-
-              <p className="text-sm text-slate-600 leading-relaxed font-medium">
-                Have a unique design in mind or a photograph of a bridal set you love? Share your reference, desired gold weight (in tola/grams), and budget. Our master goldsmiths in Devdaha will craft it with hallmark precision.
-              </p>
-
-              <ul className="space-y-2 text-xs text-slate-500 font-medium">
-                <li>• 3D CAD design preview &amp; customized weight planning</li>
-                <li>• 24K Chhapawal, 22K Tejabi, or 18K Diamond settings</li>
-                <li>• Direct WhatsApp inquiry with immediate quote</li>
-              </ul>
-            </div>
-
-            <Link
-              href="/custom-design"
-              className="py-3.5 px-6 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all"
-            >
-              <span>Submit Custom Design Inquiry</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          {/* Card 2: Book Repair / Polish */}
-          <div className="rounded-xl p-8 bg-[#FDF8F0] shadow-xs flex flex-col justify-between space-y-8">
-            <div className="space-y-6">
-              <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800">
-                  Expert Care &amp; Restoration
-                </span>
-                <h3 className="text-2xl font-bold text-slate-950 font-serif-luxury mt-1">
-                  Book Repair / Polish
-                </h3>
-              </div>
-
-              <p className="text-sm text-slate-600 leading-relaxed font-medium">
-                Restore your heirloom gold and silver ornaments to brand-new mirror brilliance. We provide high-gloss ultrasonic cleaning, laser soldering, ring resizing, and missing gemstone replacements.
-              </p>
-
-              <ul className="space-y-2 text-xs text-slate-500 font-medium">
-                <li>• Ultrasonic buffing &amp; high-gloss mirror finish</li>
-                <li>• Precision ring sizing &amp; invisible laser chain soldering</li>
-                <li>• Book a showroom appointment at Devdaha-5, Khaireni</li>
-              </ul>
-            </div>
-
-            <Link
-              href="/repair-polish"
-              className="py-3.5 px-6 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all"
-            >
-              <span>Book Repair / Polish Appointment</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Showroom Visit & Location Section: Cream Panel, No Borders */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-xl bg-[#FDF8F0] p-8 sm:p-12 shadow-xs">
+        <div className="rounded-2xl bg-white border border-neutral-100/80 p-8 sm:p-12 shadow-2xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
             <div className="lg:col-span-7 space-y-6">
               <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-800">
                 Visit Our Showroom
@@ -293,11 +270,10 @@ export default async function HomePage() {
               </div>
 
               <div className="pt-2 flex flex-wrap gap-3">
-                {/* Flat Ghost WhatsApp */}
                 <Link
                   href={`https://wa.me/977${STORE_INFO.whatsapp}?text=${encodeURIComponent('Namaste RAMBADEVI Jewellers, I would like to schedule a visit to your Devdaha showroom.')}`}
                   target="_blank"
-                  className="py-3 px-5 rounded-lg bg-emerald-50 text-emerald-800 font-extrabold text-xs hover:bg-emerald-100 flex items-center gap-1.5"
+                  className="py-3 px-5 rounded-lg bg-emerald-50 text-emerald-800 font-extrabold text-xs hover:bg-emerald-100 flex items-center gap-1.5 transition-colors"
                 >
                   <MessageCircle className="w-3.5 h-3.5 fill-emerald-800 text-emerald-50" />
                   <span>Notify Us Before Visiting</span>
@@ -306,7 +282,7 @@ export default async function HomePage() {
                 <Link
                   href={STORE_INFO.googleMapsUrl}
                   target="_blank"
-                  className="py-3 px-5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold text-xs flex items-center gap-1.5"
+                  className="py-3 px-5 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-900 font-bold text-xs flex items-center gap-1.5 transition-colors border border-slate-200"
                 >
                   <span>Get Google Maps Directions</span>
                 </Link>
@@ -314,7 +290,7 @@ export default async function HomePage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm aspect-4/3 bg-slate-100">
+              <div className="rounded-xl overflow-hidden border border-slate-150 shadow-xs aspect-4/3 bg-slate-100">
                 <iframe
                   title="RAMBADEVI Jewellers Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14138.489377484435!2d83.567!3d27.674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39969a5323985555%3A0x23a670355b2520!2sDevdaha%2C%20Khaireni%2C%20Rupandehi!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp"
@@ -328,9 +304,11 @@ export default async function HomePage() {
                 />
               </div>
             </div>
+
           </div>
         </div>
       </section>
+
     </div>
   );
 }
